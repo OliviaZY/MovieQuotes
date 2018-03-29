@@ -11,20 +11,16 @@ import UIKit
 class MovieQuotesTableViewController: UITableViewController {
     
     let movieQuoteCellIdentifier = "MovieQuoteCell"
+    let noMoviwQuoteCell = "NoMoviwQuoteCell"
     let names = ["Olivia", "Fred", "Christy"]
     var movieQuotes = [MovieQuotes]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(showAddDialog))
-        movieQuotes.append(MovieQuotes(quote:"i will be back", movie: "the terminator"))
-        movieQuotes.append(MovieQuotes(quote:"YO adrian!", movie: "not the terminator"))
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
+//        movieQuotes.append(MovieQuotes(quote:"i will be back", movie: "the terminator"))
+//        movieQuotes.append(MovieQuotes(quote:"YO adrian!", movie: "not the terminator"))
+    
     }
     
     @objc func showAddDialog(){
@@ -46,8 +42,11 @@ class MovieQuotesTableViewController: UITableViewController {
             let movieQuote = MovieQuotes(quote: quoteTextField.text!,
                                          movie: movieTextField.text!)
             self.movieQuotes.insert(movieQuote, at: 0)
-//            self.tableView.reloadData()
-            self.tableView.insertRows(at: [IndexPath(row:0, section:0)], with: UITableViewRowAnimation.top)
+            if self.movieQuotes.count == 1{
+                self.tableView.reloadData()
+            }else{
+                self.tableView.insertRows(at: [IndexPath(row:0, section:0)], with: UITableViewRowAnimation.top)
+            }            
         }
         alertController.addAction(cancelAction)
         alertController.addAction(createQuoteAction)
@@ -69,15 +68,25 @@ class MovieQuotesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return movieQuotes.count
+        return max(movieQuotes.count, 1)
+        
     }
     
     
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: movieQuoteCellIdentifier, for: indexPath)
-     cell.textLabel?.text = movieQuotes[indexPath.row].quote
-     cell.detailTextLabel?.text = movieQuotes[indexPath.row].movie
-     return cell
+//     let cell = tableView.dequeueReusableCell(withIdentifier: movieQuoteCellIdentifier, for: indexPath)
+//     cell.textLabel?.text = movieQuotes[indexPath.row].quote
+//     cell.detailTextLabel?.text = movieQuotes[indexPath.row].movie
+//     return cell
+        var cell: UITableViewCell
+        if movieQuotes.count == 0{
+            cell = tableView.dequeueReusableCell(withIdentifier: movieQuoteCellIdentifier, for: indexPath)
+        }else{
+             cell = tableView.dequeueReusableCell(withIdentifier: movieQuoteCellIdentifier, for: indexPath)
+             cell.textLabel?.text = movieQuotes[indexPath.row].quote
+             cell.detailTextLabel?.text = movieQuotes[indexPath.row].movie
+        }
+        return cell
      }
  
     

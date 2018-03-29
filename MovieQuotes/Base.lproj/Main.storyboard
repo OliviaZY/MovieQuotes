@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Quotes-->
         <scene sceneID="wga-PG-LgT">
             <objects>
                 <tableViewController id="LRA-Kb-UEn" customClass="MovieQuotesTableViewController" customModule="MovieQuotes" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,13 +42,21 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoMoviwQuoteCell" id="dH9-Dz-tkv">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dH9-Dz-tkv" id="MGV-BC-Ksy">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="LRA-Kb-UEn" id="f46-7C-ctl"/>
                             <outlet property="delegate" destination="LRA-Kb-UEn" id="D5k-Jz-izP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="6Pg-Ot-NHq" customClass="MovieQuotes"/>
+                    <navigationItem key="navigationItem" title="Quotes" id="6Pg-Ot-NHq" customClass="MovieQuotes"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bM1-Pr-GOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
