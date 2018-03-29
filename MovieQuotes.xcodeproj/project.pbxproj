@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A07D7F3C206D367800C1B07E /* MovieQuotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D7F3B206D367800C1B07E /* MovieQuotesTableViewController.swift */; };
+		A07D7F3E206D395100C1B07E /* MovieQuotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D7F3D206D395100C1B07E /* MovieQuotes.swift */; };
 		A0FBFAD8206AA2DB00BF5088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBFAD7206AA2DB00BF5088 /* AppDelegate.swift */; };
 		A0FBFADB206AA2DB00BF5088 /* MovieQuotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0FBFAD9206AA2DB00BF5088 /* MovieQuotes.xcdatamodeld */; };
 		A0FBFAE2206AA2DB00BF5088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FBFAE0206AA2DB00BF5088 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		A07D7F3B206D367800C1B07E /* MovieQuotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieQuotesTableViewController.swift; sourceTree = "<group>"; };
+		A07D7F3D206D395100C1B07E /* MovieQuotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieQuotes.swift; sourceTree = "<group>"; };
 		A0FBFAD4206AA2DB00BF5088 /* MovieQuotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieQuotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FBFAD7206AA2DB00BF5088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0FBFADA206AA2DB00BF5088 /* MovieQuotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieQuotes.xcdatamodel; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				A0FBFAE8206AA2DB00BF5088 /* Info.plist */,
 				A0FBFAD9206AA2DB00BF5088 /* MovieQuotes.xcdatamodeld */,
 				A07D7F3B206D367800C1B07E /* MovieQuotesTableViewController.swift */,
+				A07D7F3D206D395100C1B07E /* MovieQuotes.swift */,
 			);
 			path = MovieQuotes;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0FBFAD8206AA2DB00BF5088 /* AppDelegate.swift in Sources */,
+				A07D7F3E206D395100C1B07E /* MovieQuotes.swift in Sources */,
 				A07D7F3C206D367800C1B07E /* MovieQuotesTableViewController.swift in Sources */,
 				A0FBFADB206AA2DB00BF5088 /* MovieQuotes.xcdatamodeld in Sources */,
 			);
