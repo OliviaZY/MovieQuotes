@@ -9,10 +9,10 @@
 import UIKit
 
 class MovieQuotesTableViewController: UITableViewController {
-    
+    let showDtailSegueIdentifier = "ShowDetailSegue"
     let movieQuoteCellIdentifier = "MovieQuoteCell"
-    let noMoviwQuoteCell = "NoMoviwQuoteCell"
-    let names = ["Olivia", "Fred", "Christy"]
+    let noMoviwQuoteCellIdentifier = "NoMoviwQuoteCell"
+    let names = ["Olivia", "Fred", "Christy", "Joe"]
     var movieQuotes = [MovieQuotes]()
     
     override func viewDidLoad() {
@@ -22,6 +22,11 @@ class MovieQuotesTableViewController: UITableViewController {
         movieQuotes.append(MovieQuotes(quote:"i will be back", movie: "the terminator"))
         movieQuotes.append(MovieQuotes(quote:"YO adrian!", movie: "not the terminator"))
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     @objc func showAddDialog(){
@@ -68,7 +73,8 @@ class MovieQuotesTableViewController: UITableViewController {
     //    }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
-        if movieQuotes.count == 0{
+        if movieQuotes.count == 0 {
+            print("Don't allow delete")
             super.setEditing(false, animated:animated)
         }else{
             super.setEditing(editing, animated: animated)
@@ -88,8 +94,8 @@ class MovieQuotesTableViewController: UITableViewController {
         //     cell.detailTextLabel?.text = movieQuotes[indexPath.row].movie
         //     return cell
         var cell: UITableViewCell
-        if movieQuotes.count == 0{
-            cell = tableView.dequeueReusableCell(withIdentifier: movieQuoteCellIdentifier, for: indexPath)
+        if movieQuotes.count == 0 {
+            cell = tableView.dequeueReusableCell(withIdentifier: noMoviwQuoteCellIdentifier, for: indexPath)
         }else{
             cell = tableView.dequeueReusableCell(withIdentifier: movieQuoteCellIdentifier, for: indexPath)
             cell.textLabel?.text = movieQuotes[indexPath.row].quote
@@ -112,13 +118,12 @@ class MovieQuotesTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             movieQuotes.remove(at: indexPath.row)
-            if movieQuotes.count == 0{
+            if movieQuotes.count == 0 {
                 tableView.reloadData()
                 self.setEditing(false, animated: true)
             }else{
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
-            
         } 
     }
     
@@ -138,14 +143,16 @@ class MovieQuotesTableViewController: UITableViewController {
      }
      */
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == showDtailSegueIdentifier{
+            if let indexPath = tableView.indexPathForSelectedRow{
+                (segue.destination as! MovieQuoteDetailViewController).movieQuote = movieQuotes[indexPath.row]
+            }
+        }
+    }
+    
     
 }
