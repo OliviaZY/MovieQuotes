@@ -9,7 +9,7 @@
 import UIKit
 
 class MovieQuotesTableViewController: UITableViewController {
-    let showDtailSegueIdentifier = "ShowDetailSegue"
+    let showDtailSegueIdentifier = "showDetailSegue"
     let movieQuoteCellIdentifier = "MovieQuoteCell"
     let noMoviwQuoteCellIdentifier = "NoMoviwQuoteCell"
     let names = ["Olivia", "Fred", "Christy", "Joe"]
@@ -20,8 +20,7 @@ class MovieQuotesTableViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(showAddDialog))
         movieQuotes.append(MovieQuotes(quote:"i will be back", movie: "the terminator"))
-        movieQuotes.append(MovieQuotes(quote:"YO adrian!", movie: "not the terminator"))
-        
+        movieQuotes.append(MovieQuotes(quote:"YO adrian!", movie: "not the terminator"))        
     }
     
     override func viewWillAppear(_ animated: Bool) {

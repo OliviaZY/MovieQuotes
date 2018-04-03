@@ -42,6 +42,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Qfa-Vm-rYf" kind="show" identifier="showDetailSegue" id="Cpi-Fa-g5x"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoMoviwQuoteCell" textLabel="CsJ-ny-bC4" style="IBUITableViewCellStyleDefault" id="dH9-Dz-tkv">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
@@ -76,33 +79,33 @@
         <scene sceneID="VZc-vv-62Y">
             <objects>
                 <viewController id="Qfa-Vm-rYf" customClass="MovieQuoteDetailViewController" customModule="MovieQuotes" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0YF-Sn-0OU" customClass="MovieQuote">
+                    <view key="view" contentMode="scaleToFill" id="0YF-Sn-0OU" userLabel="View" customClass="MovieQuote">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cod-oW-sFf">
-                                <rect key="frame" x="20" y="40" width="335" height="143"/>
+                                <rect key="frame" x="20" y="84" width="335" height="99"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quotes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVZ-mn-hqq">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="25"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote goes here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQM-dn-m4T">
-                                        <rect key="frame" x="0.0" y="36" width="335" height="35.5"/>
+                                        <rect key="frame" x="0.0" y="25" width="335" height="24.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4Z-x1-iTs">
-                                        <rect key="frame" x="0.0" y="71.5" width="335" height="36"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="335" height="25"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="movie goes here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skt-mH-kdD">
-                                        <rect key="frame" x="0.0" y="107.5" width="335" height="35.5"/>
+                                        <rect key="frame" x="0.0" y="74.5" width="335" height="24.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -118,19 +121,15 @@
                             <constraint firstItem="cod-oW-sFf" firstAttribute="leading" secondItem="syn-S3-CYZ" secondAttribute="leading" constant="20" id="ujd-3V-Det"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="syn-S3-CYZ"/>
-                        <connections>
-                            <outlet property="movieLabel" destination="skt-mH-kdD" id="CXM-zU-Hip"/>
-                            <outlet property="quoteLabel" destination="XQM-dn-m4T" id="D7J-4C-YQd"/>
-                        </connections>
                     </view>
                     <connections>
-                        <outlet property="movieLabel" destination="skt-mH-kdD" id="q9r-cK-SYH"/>
-                        <outlet property="quoteLabel" destination="XQM-dn-m4T" id="b9d-TL-QPj"/>
+                        <outlet property="movieLabel" destination="skt-mH-kdD" id="L3b-kQ-gh9"/>
+                        <outlet property="quoteLabel" destination="XQM-dn-m4T" id="c80-uJ-DJz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QT9-ny-5bP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="493.60000000000002" y="-292.80359820089956"/>
+            <point key="canvasLocation" x="505" y="-228"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cyy-2h-BUU">
